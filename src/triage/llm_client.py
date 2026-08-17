@@ -1,9 +1,8 @@
 # llm_client.py - thin wrapper around Ollama's OpenAI-compatible endpoint.
 #
-# Pattern adapted from vaidz-llm/backend/agent_core.py:210-226 (the
-# `_get_client` local-tier branch): a single `openai.OpenAI` client pointed
-# at Ollama, since Ollama exposes both local and "-cloud" hosted models
-# through the same http://localhost:11434/v1 API.
+# A single `openai.OpenAI` client pointed at Ollama, since Ollama exposes
+# both local and "-cloud" hosted models through the same
+# http://localhost:11434/v1 API.
 
 from typing import Any, Optional
 

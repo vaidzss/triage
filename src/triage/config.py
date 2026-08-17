@@ -2,13 +2,10 @@
 #
 # All LLM calls go through a single Ollama endpoint. Ollama itself proxies
 # both locally-resident models and its "-cloud" hosted models through the
-# same OpenAI-compatible API, so there is only ever one base_url/client here
-# (unlike vaidz-llm/backend/agent_core.py, which has genuinely separate
-# local/cloud providers).
+# same OpenAI-compatible API, so there is only ever one base_url/client here.
 #
-# Known landmine (see vaidz-llm/backend/CLAUDE.md:114-116): gemma3:4b and
-# plain llama3 return HTTP 400 "does not support tools". Do not use them for
-# any model role below.
+# Known landmine: gemma3:4b and plain llama3 return HTTP 400 "does not
+# support tools". Do not use them for any model role below.
 
 import os
 

@@ -24,10 +24,12 @@ pip install -e ".[dev]"
 
 ## Status
 
-Phase 0 (scaffolding + model validation) and Phase 1 (Docker sandbox runner) done and
-checkpointed (`pytest tests/test_sandbox.py` passes end-to-end against Docker).
-Next up: Phase 2, the LangGraph Patcher <-> Tester retry loop.
-See the build plan for the full phased roadmap (Locator, LangGraph loop, benchmark harness).
+Phase 0 (scaffolding + model validation), Phase 1 (Docker sandbox runner), and Phase 2
+(LangGraph Patcher <-> Tester retry loop) done and checkpointed
+(`pytest tests/` passes end-to-end against Docker + Ollama, including a full
+bug -> patch -> tests-pass cycle in `tests/test_graph_single_bug.py`).
+Next up: Phase 3, the Bug Locator (ripgrep + tree-sitter).
+See the build plan for the full phased roadmap (Locator, benchmark harness).
 
 Notes:
 - `TRIAGE_CLOUD_MODEL` is unset by default — the originally planned cloud fallback

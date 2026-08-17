@@ -23,3 +23,9 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.pytest.ini_options]
+# tests/fixtures/* are toy target repos run inside the Docker sandbox, not
+# part of this project's own test suite - collecting them directly causes
+# module-name collisions (both fixture repos have a test_calc.py).
+norecursedirs = ["tests/fixtures", ".venv"]

@@ -1,10 +1,7 @@
 # tools.py - Tool/TOOL_REGISTRY schema wrapper.
 #
-# Adapted from vaidz-llm/backend/agent_core.py:39-77, which is generic and
-# Jarvis-independent. Kept close to the original; dropped `dangerous` /
-# `outbound` (Jarvis's trust-boundary flags for destructive/egress actions -
-# not meaningful for this project's tools, which only touch an ephemeral
-# sandbox and the model's own diff output).
+# A minimal dataclass-style wrapper around a callable plus its OpenAI/Ollama
+# function-calling JSON schema.
 
 import inspect
 from typing import Callable, Dict
