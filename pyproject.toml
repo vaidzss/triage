@@ -1,0 +1,25 @@
+[project]
+name = "triage"
+version = "0.1.0"
+description = "Autonomous multi-agent code-repair system (Bug Locator -> Patch Engineer -> Test Verification)"
+requires-python = ">=3.11"
+dependencies = [
+    "openai>=1.0.0",
+    "langgraph>=0.2.0",
+    "docker>=7.0.0",
+    "tree-sitter>=0.23.0",
+    "tree-sitter-python>=0.23.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
